@@ -1,0 +1,22 @@
+{
+  "name": "LLLib",
+  "version": "0.1.0",
+  "summary": "A short description of LLLib.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/LLLib",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Zunware": "jose@josellausas.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/LLLib.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "LLLib/Classes/**/*"
+}

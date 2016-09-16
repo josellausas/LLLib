@@ -13,6 +13,20 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    // Setup the LLLib
+    [[LLLib getInstance] initCoreDataWithModel:@{
+         @"GameScore" : @{
+                 @"score":@"string",
+                 @"playerName":@"string",
+                 @"cheatMode": @"bool",
+         },
+         @"Task" : @{
+                 @"title":@"string",
+                 @"dueDate":@"date",
+                 @"status":@"number",
+         }
+    }];
+    
     return YES;
 }
 
