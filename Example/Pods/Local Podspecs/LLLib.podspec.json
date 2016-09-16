@@ -1,18 +1,18 @@
 {
   "name": "LLLib",
   "version": "0.1.0",
-  "summary": "A short description of LLLib.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/LLLib",
+  "summary": "Simplifies using CoreData and allows to dynamically create model schemas. (WORK IN PROGRESS)",
+  "description": "A toolbelt for iOS development. Simplifies using CoreData and allows to dynamically create model schemas. You can programatically create CoreData managed objects and manipulate them from external tools like React Native.",
+  "homepage": "https://github.com/zunware/LLLib",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "Zunware": "jose@josellausas.com"
+    "Zunware": "jose@zunware.com"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/LLLib.git",
+    "git": "https://github.com/zunware/LLLib.git",
     "tag": "0.1.0"
   },
   "platforms": {

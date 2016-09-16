@@ -3,7 +3,7 @@ This application makes use of the following third party libraries:
 
 ## LLLib
 
-Copyright (c) 2016 Zunware <jose@josellausas.com>
+Copyright (c) 2016 Zunware <jose@zunware.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
