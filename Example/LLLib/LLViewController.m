@@ -29,6 +29,7 @@
         @"cheatMode": @NO,
     }];
     
+    
     // Another one
     NSManagedObject* obj2 = [libMan createInstance:@"GameScore" withData:@{
         @"score": @200,
@@ -38,6 +39,8 @@
     
     // save to disk
     [libMan saveContext];
+    NSLog(@"Created obj: %@" , obj.objectID);
+    NSLog(@"Created obj: %@" , obj2.objectID);
     
     
     // Read fresh

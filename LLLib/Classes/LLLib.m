@@ -51,7 +51,7 @@
     
     if(error)
     {
-        NSLog([error localizedDescription]);
+        NSLog(@"%@", [error localizedDescription]);
         return NO;
     }
     
@@ -65,8 +65,6 @@
     
     for(NSString* key in [modelDict allKeys])
     {
-        NSDictionary* cd = [modelDict objectForKey:key];
-        
         NSEntityDescription* entity = [[NSEntityDescription alloc]init];
         
         [entity setName:key];

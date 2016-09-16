@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
 /**
  *  Manages the CoreData internals.
@@ -14,6 +15,7 @@
 @interface LLDataController : NSObject
 
 @property (strong) NSManagedObjectContext* moc;
+@property (strong) NSPersistentStore* store;
 
 /**
  *  Initializes with the given model
@@ -24,10 +26,6 @@
  */
 -(id)initWithModel:(NSManagedObjectModel*) model;
 
-/**
- *  Initilizes CoreData
- */
--(void)initCoreData;
 
 /**
  *  The context

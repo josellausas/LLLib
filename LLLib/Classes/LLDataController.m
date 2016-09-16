@@ -7,7 +7,7 @@
 //
 
 #import "LLDataController.h"
-#import <CoreData/CoreData.h>
+
 
 @implementation LLDataController
 
@@ -62,8 +62,9 @@
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
         NSError *error = nil;
         NSPersistentStoreCoordinator *psc = [[self moc] persistentStoreCoordinator];
-        NSPersistentStore *store = [psc addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error];
-        NSAssert(store != nil, @"Error initializing PSC: %@\n%@", [error localizedDescription], [error userInfo]);
+        self.store = [psc addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error];
+        NSAssert(_store != nil, @"Error initializing PSC: %@\n%@", [error localizedDescription], [error userInfo]);
+        
     });
     
 }
