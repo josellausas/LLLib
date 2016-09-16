@@ -34,6 +34,30 @@
     return sharedInstance;
 }
 
+-(NSManagedObject*)createNewObject:(NSString*)objectName
+{
+    NSManagedObject* entity = [NSEntityDescription
+                                   insertNewObjectForEntityForName:objectName
+                                   inManagedObjectContext:[self.dataController getDataContext]];
+
+    return entity;
+}
+
+-(BOOL)saveContext
+{
+    // Attempt to save
+    NSError* error;
+    [self.dataController.moc save:&error];
+    
+    if(error)
+    {
+        NSLog([error localizedDescription]);
+        return NO;
+    }
+    
+    return YES;
+}
+
 -(void)initCoreDataWithModel:(NSDictionary*)modelDict
 {
     NSManagedObjectModel* model = [[NSManagedObjectModel alloc] init];
@@ -95,6 +119,8 @@
     
     // Create a Data controller with the model
     self.dataController = [[LLDataController alloc] initWithModel:model];
+    
+    [self saveContext];
 }
 
 -(NSArray*)getObjectsNamed:(NSString*)name
@@ -102,16 +128,37 @@
     return [self.dataController getObjectsNamed:name];
 }
 
-/**
- *  Converts a String to a CoreData type
- *
- *  @param attrStr "string" or "number" or "date"
- *
- *  @return A NSAttributeType for the correct type
- */
--(NSAttributeType)getAttributeTypeFromString:(NSString*)attrStr
+-(NSManagedObject*)createInstance:(NSString*)className withData:(NSDictionary*)data
 {
+    NSManagedObject* obj = [self createNewObject:className];
     
+    if(obj != nil)
+    {
+        for(NSString* key in [data allKeys])
+        {
+            [obj setValue:[data valueForKey:key] forKey:key];
+        }
+    }
+    else
+    {
+        NSLog(@"Error: Could not create ManagedObject");
+    }
+    
+    return obj;
+    
+}
+
+-(void)deleteInstance:(NSManagedObject*)objToDelete
+{
+    [[self.dataController getDataContext] deleteObject:objToDelete];
+}
+
+-(void)deleteObjects:(NSArray*)instancesToDelete
+{
+    for(int i = 0; i < [instancesToDelete count]; ++i)
+    {
+        [self deleteInstance:[instancesToDelete objectAtIndex:i]];
+    }
 }
 
 

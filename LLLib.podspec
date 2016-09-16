@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'LLLib'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of LLLib.'
+  s.summary          = 'A toolbelt for iOS development. Simplifies using CoreData and allows to dynamically create model schemas. You can programatically create CoreData managed objects and manipulate them from external tools like React Native'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,10 +18,10 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+A toolbelt for iOS development. Simplifies using CoreData and allows to dynamically create model schemas. You can programatically create CoreData managed objects and manipulate them from external tools like React Native.
                        DESC
 
-  s.homepage         = 'https://github.com/<GITHUB_USERNAME>/LLLib'
+  s.homepage         = 'https://github.com/zunware/LLLib'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Zunware' => 'jose@josellausas.com' }

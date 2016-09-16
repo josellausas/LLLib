@@ -8,6 +8,8 @@
 
 @import UIKit;
 
+#import <LLLib/LLLib.h>
+
 @interface LLViewController : UIViewController
 
 @end
